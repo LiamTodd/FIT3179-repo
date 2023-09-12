@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+</head>
+
+<body>
+
+    <div style="display:flex;flex-direction: column;">
+        <div id="stacked-bar"></div>
+        <div id="heat-map"></div>
+        <div id="heat-map-mini"></div>
+        <div id="scatterplot"></div>
+        <div id="stream"></div>
+        <div id="price-map"></div>
+        <div id="landsize-map"></div>
+
+    </div>
+
+
+    <script type="text/javascript">
+        const stackedBarPath = "visualisations/json_specs/stacked_bar.json";
+        vegaEmbed('#stacked-bar', stackedBarPath).then((stackedBarPath) => {
+        }).catch(console.error);
+        const  heatMapPath = "visualisations/json_specs/heat_map.json";
+        vegaEmbed('#heat-map', heatMapPath).then((heatMapPath) => {
+        }).catch(console.error);
+        const  heatMapMiniPath = "visualisations/json_specs/mini_heat_map.json";
+        vegaEmbed('#heat-map-mini', heatMapMiniPath).then((heatMapMiniPath) => {
+        }).catch(console.error);
+        const  scatterplotPath = "visualisations/json_specs/scatterplot.json";
+        vegaEmbed('#scatterplot', scatterplotPath).then((scatterplotPath) => {
+        }).catch(console.error);
+        const  streamPath = "visualisations/json_specs/stream.json";
+        vegaEmbed('#stream', streamPath).then((streamPath) => {
+        }).catch(console.error);
+        const  priceMapPath = "visualisations/json_specs/price_map.json";
+        vegaEmbed('#price-map', priceMapPath).then((priceMapPath) => {
+        }).catch(console.error);
+        const  landsizeMapPath = "visualisations/json_specs/landsize_map.json";
+        vegaEmbed('#landsize-map', landsizeMapPath).then((landsizeMapPath) => {
+        }).catch(console.error);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 500,
+    "data": {
+        "url": "./visualisations/datasets/vic_localities.json",
+        "format": {
+            "type": "topojson",
+            "feature": "vic_localities"
+        }
+    },
+    "transform": [
+        {
+            "lookup": "properties.LOC_NAME",
+            "from": {
+                "data": {
+                    "url": "./visualisations/datasets/prop_sales_avg.csv"
+                },
+                "key": "Suburb",
+                "fields": [
+                    "Average Landsize"
+                ]
+            },
+            "default": "0"
+        },
+        {
+            "filter": "datum['Average Landsize'] < 2000"
+        }
+    ],
+    "projection": {
+        "type": "mercator"
+    },
+    "mark": {
+        "type": "geoshape"
+    },
+    "encoding": {
+        "color": {
+            "field": "Average Landsize",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "reds"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "properties.LOC_NAME",
+                "type": "nominal"
+            },
+            {
+                "field": "Average Landsize",
+                "type": "quantitative"
+            }
+        ]
+    }
+}
