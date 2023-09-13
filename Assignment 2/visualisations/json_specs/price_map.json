@@ -22,6 +22,10 @@
                 ]
             },
             "default": "0"
+        },
+        {
+            "calculate": "datum['Average Price'] === '0' ? 'no data' : datum['Average Price']",
+            "as": "AveragePriceLabel"
         }
     ],
     "projection": {
@@ -44,8 +48,8 @@
                 "type": "nominal"
             },
             {
-                "field": "Average Price",
-                "type": "quantitative"
+                "field": "AveragePriceLabel",
+                "type": "nominal"
             }
         ]
     }

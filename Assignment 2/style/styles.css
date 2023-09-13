@@ -1,0 +1,54 @@
+.base {
+    background-color: #D4DBE2;
+    width: 11.69in;
+    height: 16.54in;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.title {
+    color: #453C41
+}
+
+p {
+    color: #7B586B
+}
+
+.plot-background {
+    background-color: #7B7C81;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    height: 4.5in;
+    justify-content: space-between;
+    margin: 0.3in;
+    border-radius: 0.1in;
+}
+
+.frame {
+    flex: auto;
+    text-align: center;
+    padding: 0.1in;
+    margin: 0 0.05in;
+}
+
+.plot-container {
+    background-color: #aeafb4;
+    height: 4.3in;
+    border-radius: 0.1in;
+}
+
+.plot {
+    height: 3.5in;
+    background-color: black;
+}
+
+/* #1D0F0F black
+#453C41 dark red/brown
+#aeafb4 light grey
+#D4DBE2 white
+#7B586B red */

@@ -24,6 +24,10 @@
             "default": "0"
         },
         {
+            "calculate": "datum['Average Landsize'] === '0' ? 'no data' : datum['Average Landsize']",
+            "as": "AverageLandsizeLabel"
+        },
+        {
             "filter": "datum['Average Landsize'] < 2000"
         }
     ],
@@ -47,8 +51,8 @@
                 "type": "nominal"
             },
             {
-                "field": "Average Landsize",
-                "type": "quantitative"
+                "field": "AverageLandsizeLabel",
+                "type": "nominal"
             }
         ]
     }
