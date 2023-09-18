@@ -1,0 +1,80 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 500,
+    "data": {
+        "url": "./datasets/vic_localities.json",
+        "format": {
+            "type": "topojson",
+            "feature": "vic_localities"
+        }
+    },
+    "transform": [
+        {
+            "lookup": "properties.LOC_NAME",
+            "from": {
+                "data": {
+                    "url": "./datasets/prop_sales_avg.csv"
+                },
+                "key": "Suburb",
+                "fields": [
+                    "Average Price"
+                ]
+            },
+            "default": "0"
+        },
+        {
+            "calculate": "datum['Average Price'] === '0' ? 'no data' : datum['Average Price'] < 700000 ? '<500k' : datum['Average Price'] < 1200000 ? '<1m' : datum['Average Price'] < 1800000 ? '<1.5m' : '>1.5m'",
+            "as": "Average Price Bin"
+        },
+        {
+            "calculate": "datum['Average Price'] === '0' ? 'no data' : datum['Average Price']",
+            "as": "Average Price Label"
+        }
+    ],
+    "projection": {
+        "type": "mercator"
+    },
+    "mark": {
+        "type": "geoshape"
+    },
+    "encoding": {
+        "color": {
+            "field": "Average Price Bin",
+            "type": "ordinal",
+            "scale": {
+                "domain": [
+                    "no data",
+                    "<500k",
+                    "<1m",
+                    "<1.5m",
+                    ">1.5m"
+                ],
+                "range": [
+                    "#cccccc",
+                    "#f5a588",
+                    "#ec563d",
+                    "#d73026",
+                    "#b81619"
+                ]
+            },
+            "sort": [
+                "no data",
+                "<500k",
+                "<1m",
+                "<1.5m",
+                ">1.5m"
+            ]
+        },
+        "tooltip": [
+            {
+                "field": "properties.LOC_NAME",
+                "type": "nominal"
+            },
+            {
+                "field": "Average Price Label",
+                "type": "nominal"
+            }
+        ]
+    }
+}
