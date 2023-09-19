@@ -1,0 +1,114 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 500,
+    "title": "Average Property Sale Prices in Metropolitan Melbourne",
+    "data": {
+        "url": "./datasets/vic_localities.json",
+        "format": {
+            "type": "topojson",
+            "feature": "vic_localities"
+        }
+    },
+    "transform": [
+        {
+            "lookup": "properties.LOC_NAME",
+            "from": {
+                "data": {
+                    "url": "./datasets/prop_sales_avg.csv"
+                },
+                "key": "Suburb",
+                "fields": [
+                    "Average Price"
+                ]
+            },
+            "default": "0"
+        },
+        {
+            "calculate": "datum['Average Price'] === '0' ? 'No data' : datum['Average Price'] < 750000 ? '$0-$750k' : datum['Average Price'] < 1200000 ? '$750k-$1.2m' : datum['Average Price'] < 1500000 ? '$1.2m-$1.5m' : '$1.5m+'",
+            "as": "Average Price Bin"
+        },
+        {
+            "calculate": "datum['Average Price'] === '0' ? 'No data' :  format(datum['Average Price'], '$,.0f')",
+            "as": "Average Price Formatted"
+        }
+    ],
+    "projection": {
+        "type": "mercator"
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "rect",
+                "color": "#b0d1fa"
+            },
+            "encoding": {
+                "x": {
+                    "value": 0
+                },
+                "x2": {
+                    "value": 500
+                },
+                "y": {
+                    "value": 25
+                },
+                "y2": {
+                    "value": 475
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "geoshape",
+                "strokeOpacity": 0.2
+            },
+            "encoding": {
+                "color": {
+                    "field": "Average Price Bin",
+                    "type": "ordinal",
+                    "scale": {
+                        "domain": [
+                            "No data",
+                            "$0-$750k",
+                            "$750k-$1.2m",
+                            "$1.2m-$1.5m",
+                            "$1.5m+"
+                        ],
+                        "range": [
+                            "#cccccc",
+                            "#ffffcc",
+                            "#a1dab4",
+                            "#41b6c4",
+                            "#225ea8"
+                        ]
+                    },
+                    "sort": [
+                        "No data",
+                        "$0-$750k",
+                        "$750k-$1.2m",
+                        "$1.2m-$1.5m",
+                        "$1.5m+"
+                    ],
+                    "legend": {
+                        "title": "Average Property Sale Price"
+                    }
+                },
+                "stroke": {
+                    "value": "black"
+                },
+                "tooltip": [
+                    {
+                        "field": "properties.LOC_NAME",
+                        "type": "nominal",
+                        "title": "Suburb"
+                    },
+                    {
+                        "field": "Average Price Formatted",
+                        "type": "nominal",
+                        "title": "Average Price"
+                    }
+                ]
+            }
+        }
+    ]
+}
