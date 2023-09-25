@@ -1,0 +1,193 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+  "data": {
+    "url": "./datasets/melb_property_data.csv"
+  },
+  "height": 500,
+  "width": 800,
+  "params": [
+    {
+      "name": "councilAreaSelection",
+      "value": "Melbourne",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Banyule",
+          "Bayside",
+          "Boroondara",
+          "Brimbank",
+          "Cardinia",
+          "Casey",
+          "Darebin",
+          "Frankston",
+          "Glen Eira",
+          "Greater Dandenong",
+          "Hobsons Bay",
+          "Hume",
+          "Knox",
+          "Macedon Ranges",
+          "Manningham",
+          "Maribyrnong",
+          "Maroondah",
+          "Melbourne",
+          "Melton",
+          "Monash",
+          "Moonee Valley",
+          "Moorabool",
+          "Moreland",
+          "Nillumbik",
+          "Port Phillip",
+          "Stonnington",
+          "Whitehorse",
+          "Whittlesea",
+          "Wyndham",
+          "Yarra",
+          "Yarra Ranges"
+        ],
+        "labels": [
+          "Banyule",
+          "Bayside",
+          "Boroondara",
+          "Brimbank",
+          "Cardinia",
+          "Casey",
+          "Darebin",
+          "Frankston",
+          "Glen Eira",
+          "Greater Dandenong",
+          "Hobsons Bay",
+          "Hume",
+          "Knox",
+          "Macedon Ranges",
+          "Manningham",
+          "Maribyrnong",
+          "Maroondah",
+          "Melbourne",
+          "Melton",
+          "Monash",
+          "Moonee Valley",
+          "Moorabool",
+          "Moreland",
+          "Nillumbik",
+          "Port Phillip",
+          "Stonnington",
+          "Whitehorse",
+          "Whittlesea",
+          "Wyndham",
+          "Yarra",
+          "Yarra Ranges"
+        ],
+        "name": "Council Area Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum['CouncilArea'] !== '' && datum['CouncilArea'] !== 'Unavailable'"
+    },
+    {
+      "calculate": "datum['Type'] === 'h' ? 'House' : datum['Type'] === 't' ? 'Townhouse' : 'Unit/Apartment'",
+      "as": "propertyType"
+    },
+    {
+      "filter": "councilAreaSelection == null || datum['CouncilArea'] === councilAreaSelection"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusTopLeft": 3,
+        "cornerRadiusTopRight": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "Suburb",
+          "title": "Suburb"
+        },
+        "y": {
+          "aggregate": "count",
+          "title": "Number of Sales"
+        },
+        "color": {
+          "field": "propertyType",
+          "title": "Property Type",
+          "scale": {
+            "domain": [
+              "House",
+              "Townhouse",
+              "Unit/Apartment"
+            ],
+            "range": [
+              "#41b6c4",
+              "#a1dab4",
+              "#225ea8"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Suburb",
+            "type": "nominal",
+            "title": "Suburb"
+          },
+          {
+            "field": "propertyType",
+            "type": "nominal",
+            "title": "Property Type"
+          },
+          {
+            "field": "propertyType",
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Sales"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -20,
+        "dx": -20,
+        "angle": 45
+      },
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "count",
+              "as": "Total Sales"
+            }
+          ],
+          "groupby": [
+            "Suburb"
+          ]
+        },
+        {
+          "calculate": "datum['Total Sales'] > 0 ? 'Total Sales: ' + datum['Total Sales'] : ''",
+          "as": "annotationText"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Suburb",
+          "type": "nominal",
+          "title": "Suburb"
+        },
+        "y": {
+          "field": "Total Sales",
+          "type": "quantitative",
+          "title": "Total Sales"
+        },
+        "text": {
+          "field": "annotationText",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}
