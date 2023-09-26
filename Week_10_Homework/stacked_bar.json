@@ -4,8 +4,14 @@
   "data": {
     "url": "./datasets/melb_property_data.csv"
   },
+  "title": {
+    "text": "Property Sales by Type, for Council Regions",
+    "font": "Georgia",
+    "fontSize": 17
+  },
   "height": 500,
-  "width": 800,
+  "width": 500,
+  "background": "#fbfbe5",
   "params": [
     {
       "name": "councilAreaSelection",
@@ -151,9 +157,7 @@
         "type": "text",
         "align": "center",
         "baseline": "bottom",
-        "dy": -20,
-        "dx": -20,
-        "angle": 45
+        "dy": -15
       },
       "transform": [
         {
@@ -168,7 +172,7 @@
           ]
         },
         {
-          "calculate": "datum['Total Sales'] > 0 ? 'Total Sales: ' + datum['Total Sales'] : ''",
+          "calculate": "datum['Total Sales'] > 0 ? 'Total: ' + datum['Total Sales'] : ''",
           "as": "annotationText"
         }
       ],
@@ -181,7 +185,7 @@
         "y": {
           "field": "Total Sales",
           "type": "quantitative",
-          "title": "Total Sales"
+          "title": ""
         },
         "text": {
           "field": "annotationText",

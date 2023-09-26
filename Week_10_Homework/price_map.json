@@ -2,7 +2,12 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 500,
     "height": 500,
-    "title": "Average Property Sale Prices in Metropolitan Melbourne",
+    "background": "#fbfbe5",
+    "title": {
+        "text": "Average Property Sale Prices in Metropolitan Melbourne",
+        "font": "Georgia",
+        "fontSize": 17
+    },
     "data": {
         "url": "./datasets/vic_localities.json",
         "format": {

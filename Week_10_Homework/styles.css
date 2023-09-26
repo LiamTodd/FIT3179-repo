@@ -1,0 +1,95 @@
+div {
+    border-color: black;
+    border-width: 1px;
+    /* border-style: solid; */
+    align-items: center;
+    background-color: #bfcdc3;
+}
+
+.base {
+    width: 11.69in;
+    height: 16.54in;
+    margin: 0 auto;
+
+}
+
+.row-item,
+.vega-embed {
+    background-color: #fbfbe5;
+    height: 100%;
+}
+
+.chart-wrapper {
+    background-color: #fbfbe5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0.2in;
+    padding-right: 0.2in;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.vega-bind {
+    background-color: #fbfbe5;
+    align-items: left;
+
+}
+
+.text {
+    background-color: #fbfbe5;
+    padding: 0.2in;
+}
+
+select {
+    background-color: #fbfbe5;
+
+}
+.row{
+    display: flex;
+    padding: 0.2in;
+}
+.row-top{
+    height: 7in;
+}
+
+.row-bottom {
+    height: 8in;
+}
+
+.desc {
+    font-size: 1.1em;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.col-left {
+    margin-right: 0.2in;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    text-align: center;
+    font-size: 1.3em;
+    font-family: Georgia, serif;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.2in;
+
+}
+
+.header-subcontainer{
+    display: flex;
+    flex-direction: column;
+    width: 93%;
+}
+
+
+.subheading {
+    font-size: 1.1em;
+    font-family: Helvetica, Arial, sans-serif;
+}
