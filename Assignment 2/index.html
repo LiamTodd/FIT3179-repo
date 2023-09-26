@@ -73,9 +73,8 @@
         </div>
         <div id="stacked-bar"></div>
         <div id="heat-map"></div>
-        <div id="heat-map-mini"></div>
         <div id="scatterplot"></div>
-        <div id="stream"></div>
+        <div id="box"></div>
         <div id="price-map"></div>
         <div id="landsize-map"></div>
     </div>
@@ -88,14 +87,11 @@
         const heatMapPath = "visualisations/json_specs/heat_map.json";
         vegaEmbed('#heat-map', heatMapPath).then((heatMapPath) => {
         }).catch(console.error);
-        const heatMapMiniPath = "visualisations/json_specs/mini_heat_map.json";
-        vegaEmbed('#heat-map-mini', heatMapMiniPath).then((heatMapMiniPath) => {
-        }).catch(console.error);
         const scatterplotPath = "visualisations/json_specs/scatterplot.json";
         vegaEmbed('#scatterplot', scatterplotPath).then((scatterplotPath) => {
         }).catch(console.error);
-        const streamPath = "visualisations/json_specs/stream.json";
-        vegaEmbed('#stream', streamPath).then((streamPath) => {
+        const boxPath = "visualisations/json_specs/box.json";
+        vegaEmbed('#box', boxPath).then((boxPath) => {
         }).catch(console.error);
         const priceMapPath = "visualisations/json_specs/price_map.json";
         vegaEmbed('#price-map', priceMapPath).then((priceMapPath) => {

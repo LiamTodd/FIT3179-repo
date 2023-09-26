@@ -1,0 +1,144 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "./visualisations/datasets/melb_property_data.csv"
+  },
+  "background": "#fbfbe5",
+  "width": 500,
+  "height": 500,
+  "params": [
+    {
+      "name": "councilAreaSelection",
+      "value": "Melbourne",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Banyule",
+          "Bayside",
+          "Boroondara",
+          "Brimbank",
+          "Cardinia",
+          "Casey",
+          "Darebin",
+          "Frankston",
+          "Glen Eira",
+          "Greater Dandenong",
+          "Hobsons Bay",
+          "Hume",
+          "Knox",
+          "Macedon Ranges",
+          "Manningham",
+          "Maribyrnong",
+          "Maroondah",
+          "Melbourne",
+          "Melton",
+          "Monash",
+          "Moonee Valley",
+          "Moorabool",
+          "Moreland",
+          "Nillumbik",
+          "Port Phillip",
+          "Stonnington",
+          "Whitehorse",
+          "Whittlesea",
+          "Wyndham",
+          "Yarra",
+          "Yarra Ranges"
+        ],
+        "labels": [
+          "Banyule",
+          "Bayside",
+          "Boroondara",
+          "Brimbank",
+          "Cardinia",
+          "Casey",
+          "Darebin",
+          "Frankston",
+          "Glen Eira",
+          "Greater Dandenong",
+          "Hobsons Bay",
+          "Hume",
+          "Knox",
+          "Macedon Ranges",
+          "Manningham",
+          "Maribyrnong",
+          "Maroondah",
+          "Melbourne",
+          "Melton",
+          "Monash",
+          "Moonee Valley",
+          "Moorabool",
+          "Moreland",
+          "Nillumbik",
+          "Port Phillip",
+          "Stonnington",
+          "Whitehorse",
+          "Whittlesea",
+          "Wyndham",
+          "Yarra",
+          "Yarra Ranges"
+        ],
+        "name": "Council Area Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "councilAreaSelection == null || datum['CouncilArea'] === councilAreaSelection"
+    },
+    {
+      "filter": {
+        "field": "Date",
+        "valid": true
+      }
+    },
+    {
+      "timeUnit": "yearmonth",
+      "field": "Date",
+      "as": "YearMonth"
+    }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "YearMonth",
+      "type": "temporal",
+      "axis": {
+        "title": "Date",
+        "format": "%b %Y"
+      },
+      "sort": {
+        "field": "YearMonth"
+      }
+    },
+    "y": {
+      "aggregate": "min",
+      "field": "Price",
+      "title": "Price Range",
+      "axis": {
+        "title": "Price"
+      }
+    },
+    "y2": {
+      "aggregate": "max",
+      "field": "Price"
+    },
+    "tooltip": [
+      {
+        "field": "Month",
+        "type": "temporal",
+        "title": "Month"
+      },
+      {
+        "aggregate": "min",
+        "field": "Price",
+        "title": "Lowest Sale Price"
+      },
+      {
+        "aggregate": "max",
+        "field": "Price",
+        "title": "Highest Sale Price"
+      }
+    ]
+  }
+}
