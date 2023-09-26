@@ -6,26 +6,94 @@
     },
     "width": 500,
     "height": 500,
-    "mark": "point",
+    "mark": "circle",
+    "background": "#fbfbe5",
+    "title": {
+        "text": "Sale Price against Distance from CBD, with Land Size",
+        "font": "Georgia",
+        "fontSize": 17
+    },
+    "transform": [
+        {
+            "calculate": "datum['Landsize'] === '0' ? 'No data' : datum['Landsize'] < 300 ? '0m\u00B2-300m\u00B2' : datum['Landsize'] < 500 ? '300m\u00B2-500m\u00B2' : datum['Landsize'] < 700 ? '500m\u00B2-700m\u00B2' : '700m\u00B2+'",
+            "as": "Landsize Bin"
+        },
+        {
+            "calculate": "datum['Price'] === 0 ? 'No data' :  format(datum['Price'], '$,.0f')",
+            "as": "Price Formatted"
+        },
+        {
+            "calculate": "datum['Landsize'] === '0' ? 'No data' : datum['Landsize'] == 0 ? 'No data' : format(datum['Landsize'], ',.0f') + 'm\u00B2'",
+            "as": "Landsize Formatted"
+        },
+        {
+            "calculate": "datum['Distance'] === '0' ? 'No data' : datum['Distance'] == 0 ? 'No data' : format(datum['Distance'], ',.1f') + 'km'",
+            "as": "Distance Formatted"
+        }
+    ],
     "encoding": {
+        "tooltip": [
+            {
+                "field": "Distance Formatted",
+                "type": "nominal",
+                "title": "Distance from CBD"
+            },
+            {
+                "field": "Price Formatted",
+                "type": "nominal",
+                "title": "Sale Price"
+            },
+            {
+                "field": "Landsize Formatted",
+                "type": "nominal",
+                "title": "Land Size"
+            }
+        ],
         "x": {
             "field": "Distance",
             "type": "quantitative",
             "scale": {
                 "zero": true
-            }
+            },
+            "title": "Distance from CBD (km)"
         },
         "y": {
             "field": "Price",
             "type": "quantitative",
             "scale": {
                 "zero": false
-            }
+            },
+            "title": "Price ($)"
         },
         "color": {
-            "field": "Landsize",
-            "type": "quantitative",
-            "scale": {"type": "symlog"}
+            "field": "Landsize Bin",
+            "type": "ordinal",
+            "scale": {
+                "domain": [
+                    "No data",
+                    "0m\u00B2-300m\u00B2",
+                    "300m\u00B2-500m\u00B2",
+                    "500m\u00B2-700m\u00B2",
+                    "700m\u00B2+"
+                ],
+                "range": [
+                    "#cccccc",
+                    "#a1dab4",
+                    "#41b6c4",
+                    "#225ea8",
+                    "#1C3144"
+                ]
+            },
+            "sort": [
+                "No data",
+                "0m\u00B2-300m\u00B2",
+                "300m\u00B2-500m\u00B2",
+                "500m\u00B2-700m\u00B2",
+                "700m\u00B2+"
+            ],
+            "legend": {
+                "title": "Land Size"
+            }
         }
     }
 }

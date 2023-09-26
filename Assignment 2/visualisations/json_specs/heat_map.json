@@ -3,6 +3,7 @@
     "data": {
         "url": "./visualisations/datasets/melb_property_data.csv"
     },
+    "background": "#fbfbe5",
     "description": "A scatterplot showing body mass and flipper lengths of penguins.",
     "transform": [
         {
@@ -10,22 +11,18 @@
                 "and": [
                     {
                         "field": "BuildingArea",
-                        "valid": true,
                         "lte": 500
                     },
                     {
                         "field": "BuildingArea",
-                        "valid": true,
                         "gte": 10
                     },
                     {
                         "field": "Landsize",
-                        "valid": true,
                         "gte": 10
                     },
                     {
                         "field": "Landsize",
-                        "valid": true,
                         "lte": 500
                     }
                 ]
@@ -36,6 +33,13 @@
     "width": 500,
     "height": 500,
     "encoding": {
+        "tooltip": [
+            {
+                "aggregate": "count",
+                "type": "quantitative",
+                "title": "Number of Sales"
+            }
+        ],
         "x": {
             "bin": {
                 "maxbins": 25
@@ -51,8 +55,16 @@
             "type": "quantitative"
         },
         "color": {
+            "title": "Number of Sales",
             "aggregate": "count",
-            "type": "quantitative"
+            "type": "quantitative",
+            "scale": {
+                "type": "linear",
+                "range": [
+                    "#a1dab4",
+                    "#1C3144"
+                ]
+            }
         }
     },
     "config": {
