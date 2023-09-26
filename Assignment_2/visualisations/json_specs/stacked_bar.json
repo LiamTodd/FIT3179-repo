@@ -5,12 +5,12 @@
     "url": "./visualisations/datasets/melb_property_data.csv"
   },
   "title": {
-    "text": "Property Sales by Type, for Council Regions",
+    "text": "Property Sales by Type",
     "font": "Georgia",
-    "fontSize": 17
+    "fontSize": 35
   },
-  "height": 500,
-  "width": 500,
+  "height": 450,
+  "width": 450,
   "background": "#fbfbe5",
   "params": [
     {

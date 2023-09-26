@@ -3,6 +3,11 @@
     "data": {
         "url": "./visualisations/datasets/melb_property_data.csv"
     },
+    "title": {
+        "text": "Land Size and Building Area",
+        "font": "Georgia",
+        "fontSize": 35
+    },
     "background": "#fbfbe5",
     "description": "A scatterplot showing body mass and flipper lengths of penguins.",
     "transform": [
@@ -30,8 +35,8 @@
         }
     ],
     "mark": "rect",
-    "width": 500,
-    "height": 500,
+    "width": 450,
+    "height": 450,
     "encoding": {
         "tooltip": [
             {

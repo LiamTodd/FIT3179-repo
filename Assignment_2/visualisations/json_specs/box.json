@@ -4,17 +4,17 @@
     "url": "./visualisations/datasets/melb_property_data.csv"
   },
   "title": {
-    "text": "Property Sale Price Ranges Through Time",
+    "text": "Property Sale Price Ranges",
     "font": "Georgia",
-    "fontSize": 17
+    "fontSize": 35
   },
   "background": "#fbfbe5",
-  "width": 500,
-  "height": 500,
+  "width": 530,
+  "height": 450,
   "params": [
     {
       "name": "councilAreaSelection",
-      "value": "Brimbank",
+      "value": "Manningham",
       "bind": {
         "input": "select",
         "options": [

@@ -1,12 +1,12 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 500,
+    "width": 600,
+    "height": 600,
     "background": "#fbfbe5",
     "title": {
-        "text": "Average Property Sale Prices in Metropolitan Melbourne",
+        "text": "Average Property Land Sizes",
         "font": "Georgia",
-        "fontSize": 17
+        "fontSize": 35
     },
     "data": {
         "url": "./visualisations/datasets/vic_localities.json",
@@ -24,18 +24,18 @@
                 },
                 "key": "Suburb",
                 "fields": [
-                    "Average Price"
+                    "Average Landsize"
                 ]
             },
             "default": "0"
         },
         {
-            "calculate": "datum['Average Price'] === '0' ? 'No data' : datum['Average Price'] < 750000 ? '$0-$750k' : datum['Average Price'] < 1200000 ? '$750k-$1.2m' : datum['Average Price'] < 1500000 ? '$1.2m-$1.5m' : '$1.5m+'",
-            "as": "Average Price Bin"
+            "calculate": "datum['Average Landsize'] === '0' ? 'No data' : datum['Average Landsize'] < 300 ? '0m\u00B2-300m\u00B2' : datum['Average Landsize'] < 500 ? '300m\u00B2-500m\u00B2' : datum['Average Landsize'] < 700 ? '500m\u00B2-700m\u00B2' : '700m\u00B2+'",
+            "as": "Average Landsize Bin"
         },
         {
-            "calculate": "datum['Average Price'] === '0' ? 'No data' :  format(datum['Average Price'], '$,.0f')",
-            "as": "Average Price Formatted"
+            "calculate": "datum['Average Landsize'] === '0' ? 'No data' : format(datum['Average Landsize'], ',.0f') + 'm\u00B2'",
+            "as": "Average Landsize Label"
         }
     ],
     "projection": {
@@ -52,32 +52,31 @@
                     "value": 0
                 },
                 "x2": {
-                    "value": 500
+                    "value": 600
                 },
                 "y": {
-                    "value": 25
+                    "value": 30
                 },
                 "y2": {
-                    "value": 475
+                    "value": 572
                 }
             }
         },
         {
             "mark": {
-                "type": "geoshape",
-                "strokeOpacity": 0.2
+                "type": "geoshape"
             },
             "encoding": {
                 "color": {
-                    "field": "Average Price Bin",
+                    "field": "Average Landsize Bin",
                     "type": "ordinal",
                     "scale": {
                         "domain": [
                             "No data",
-                            "$0-$750k",
-                            "$750k-$1.2m",
-                            "$1.2m-$1.5m",
-                            "$1.5m+"
+                            "0m\u00B2-300m\u00B2",
+                            "300m\u00B2-500m\u00B2",
+                            "500m\u00B2-700m\u00B2",
+                            "700m\u00B2+"
                         ],
                         "range": [
                             "#cccccc",
@@ -89,13 +88,13 @@
                     },
                     "sort": [
                         "No data",
-                        "$0-$750k",
-                        "$750k-$1.2m",
-                        "$1.2m-$1.5m",
-                        "$1.5m+"
+                        "0m\u00B2-300m\u00B2",
+                        "300m\u00B2-500m\u00B2",
+                        "500m\u00B2-700m\u00B2",
+                        "700m\u00B2+"
                     ],
                     "legend": {
-                        "title": "Average Property Sale Price"
+                        "title": "Land Size"
                     }
                 },
                 "stroke": {
@@ -104,13 +103,12 @@
                 "tooltip": [
                     {
                         "field": "properties.LOC_NAME",
-                        "type": "nominal",
-                        "title": "Suburb"
+                        "title": "Suburb",
+                        "type": "nominal"
                     },
                     {
-                        "field": "Average Price Formatted",
-                        "type": "nominal",
-                        "title": "Average Price"
+                        "field": "Average Landsize Label",
+                        "type": "nominal"
                     }
                 ]
             }

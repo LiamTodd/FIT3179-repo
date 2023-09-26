@@ -1,17 +1,14 @@
 div {
-    border-color: black;
-    border-width: 1px;
-    /* border-style: solid; */
     align-items: center;
-    background-color: #bfcdc3;
 }
 
 .base {
-    width: 11.69in;
-    height: 16.54in;
+    width: 15in;
+    height: 32.7in;
     margin: 0 auto;
-
+    background-color: #bfcdc3;
 }
+
 
 .row-item,
 .vega-embed {
@@ -45,16 +42,16 @@ select {
     background-color: #fbfbe5;
 
 }
-.row{
+
+.row {
     display: flex;
     padding: 0.2in;
 }
-.row-top{
-    height: 7in;
-}
 
-.row-bottom {
-    height: 8in;
+.row-top,
+.row-bottom,
+.row-mid {
+    height: 7in;
 }
 
 .desc {
@@ -71,7 +68,7 @@ select {
     flex-direction: column;
     width: fit-content;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.8em;
     font-family: Georgia, serif;
 }
 
@@ -82,10 +79,10 @@ select {
 
 }
 
-.header-subcontainer{
+.header-subcontainer {
     display: flex;
     flex-direction: column;
-    width: 93%;
+    width: 94.5%;
 }
 
 

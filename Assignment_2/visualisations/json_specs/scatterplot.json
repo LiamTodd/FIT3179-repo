@@ -4,14 +4,14 @@
     "data": {
         "url": "./visualisations/datasets/melb_property_data.csv"
     },
-    "width": 500,
-    "height": 500,
+    "width": 450,
+    "height": 450,
     "mark": "circle",
     "background": "#fbfbe5",
     "title": {
-        "text": "Sale Price against Distance from CBD, with Land Size",
+        "text": "Sale Price, Distance, Land Size",
         "font": "Georgia",
-        "fontSize": 17
+        "fontSize": 35
     },
     "params": [
         {
