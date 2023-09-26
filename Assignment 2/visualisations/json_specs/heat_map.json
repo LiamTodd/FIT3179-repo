@@ -45,14 +45,16 @@
                 "maxbins": 25
             },
             "field": "BuildingArea",
-            "type": "quantitative"
+            "type": "quantitative",
+            "title": "Building Area (m\u00B2)"
         },
         "y": {
             "bin": {
                 "maxbins": 25
             },
             "field": "Landsize",
-            "type": "quantitative"
+            "type": "quantitative",
+            "title": "Land Size (m\u00B2)"
         },
         "color": {
             "title": "Number of Sales",
@@ -62,9 +64,14 @@
                 "type": "linear",
                 "range": [
                     "#a1dab4",
+                    "#41b6c4",
+                    "#225ea8",
                     "#1C3144"
                 ]
             }
+        },
+        "stroke": {
+            "value": "grey"
         }
     },
     "config": {

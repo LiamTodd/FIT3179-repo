@@ -3,16 +3,22 @@
   "data": {
     "url": "./visualisations/datasets/melb_property_data.csv"
   },
+  "title": {
+    "text": "Property Sale Price Ranges Through Time",
+    "font": "Georgia",
+    "fontSize": 17
+  },
   "background": "#fbfbe5",
   "width": 500,
   "height": 500,
   "params": [
     {
       "name": "councilAreaSelection",
-      "value": "Melbourne",
+      "value": "Brimbank",
       "bind": {
         "input": "select",
         "options": [
+          null,
           "Banyule",
           "Bayside",
           "Boroondara",
@@ -46,6 +52,7 @@
           "Yarra Ranges"
         ],
         "labels": [
+          "Show all",
           "Banyule",
           "Bayside",
           "Boroondara",
@@ -98,7 +105,11 @@
       "as": "YearMonth"
     }
   ],
-  "mark": "bar",
+  "mark": {
+    "type": "bar",
+    "width": 20,
+    "color": "#225ea8"
+  },
   "encoding": {
     "x": {
       "field": "YearMonth",
@@ -116,7 +127,7 @@
       "field": "Price",
       "title": "Price Range",
       "axis": {
-        "title": "Price"
+        "title": "Price ($)"
       }
     },
     "y2": {
@@ -125,19 +136,22 @@
     },
     "tooltip": [
       {
-        "field": "Month",
+        "field": "Date",
         "type": "temporal",
-        "title": "Month"
+        "title": "Date",
+        "format": "%b %Y"
       },
       {
         "aggregate": "min",
         "field": "Price",
-        "title": "Lowest Sale Price"
+        "title": "Lowest Sale Price",
+        "format": "$,.0f"
       },
       {
         "aggregate": "max",
         "field": "Price",
-        "title": "Highest Sale Price"
+        "title": "Highest Sale Price",
+        "format": "$,.0f"
       }
     ]
   }

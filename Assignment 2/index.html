@@ -7,77 +7,89 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="./style/styles.css">
+
 </head>
 
 <body>
 
     <div class="base">
-        <h1 class="title">Melbourne City Property Sales (2017-2016)</h1>
-        <p class="description">FIT3179 Assignment 2 - Liam Todd</p>
-        <div class="body-container">
-            <div class="row">
-                <div class="frame">
-                    <div class="plot-container">
-                        <div class="plot"></div>
-                        <div class="description">description</div>
-                    </div>
+        <div class="header-container">
+            <div class="text header-subcontainer">
+                <div class="text header">
+                    <h1>Metropolitan Melbourne Property Sales</h1>
                 </div>
-                <div class="frame">
-                    <div class="plot-container">
-                        <div class="plot"></div>
-                        <div class="description">description</div>
-                    </div>
+                <div class="text subheading">
+                    <span>FIT3179 Assignment 2 - Liam Todd</span>
                 </div>
-                <div class="frame">
-                    <div class="plot-container">
-                        <div class="plot"></div>
-                        <div class="description">description</div>
-                    </div>
-                </div>
+
             </div>
-            <div class="row">
-                <div class="frame">
-                    <div class="plot-container">
-                        <div class="plot"></div>
-                        <div class="description">description</div>
-                    </div>
-                </div>
-                <div class="frame">
-                    <div class="plot-container">
-                        <div class="plot"></div>
-                        <div class="description">description</div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="frame">
-                    <div class="plot-container">
-                        <div class="plot"></div>
-                        <div class="description">description</div>
-                    </div>
-                </div>
-                <div class="frame">
-                    <div class="plot-container">
-                        <div class="plot"></div>
-                        <div class="description">description</div>
-                    </div>
-                </div>
-                <div class="frame">
-                    <div class="plot-container">
-                        <div class="plot"></div>
-                        <div class="description">description</div>
-                    </div>
+        </div>
+
+        <div class="row row-top">
+            <div id="price-map" class="plot col-left row-item"></div>
+            <div class="row-item">
+                <div class="text desc">
+                    <p>
+                        This choropleth map is displays Metropolitan Melbourne suburbs, using colour to represent
+                        variations
+                        in the average property sale price. It illustrates spatial patterns and differences in property
+                        values
+                        across the Metropolitan area. Each suburb is shaded according to its respective average sale
+                        price,
+                        with darker colors indicating higher prices and lighter shades representing lower ones.
+                        <br>
+                        <br>
+                        For suburbs with no property sale data, a grey hue is used to indicate that no data was
+                        collected.
+                        <br>
+                        <br>
+                        A clear spatial trend which is evident is that property sale prices are higher, as the distance
+                        to the
+                        CBD decreases. Within this pattern, we also notice two price 'hot-spots' in the Eastern and
+                        South-Eastern
+                        suburbs, where prices are especially high.
+                    </p>
                 </div>
             </div>
         </div>
-        <div id="stacked-bar"></div>
-        <div id="heat-map"></div>
-        <div id="scatterplot"></div>
-        <div id="box"></div>
-        <div id="price-map"></div>
-        <div id="landsize-map"></div>
+        <div class="row row-bottom">
+            <div class="col-left row-item">
+                <div class="text desc">
+                    <p>
+                        This stacked bar chart serves as a comprehensive visual representation of
+                        property sales within a specific council area in Metropolitan Melbourne. Each bar on the chart
+                        corresponds to a suburb within the chosen council area.
+                        <br>
+                        <br>
+                        Encoded using colour hue is the property type, which can be 'house', 'townhouse', or
+                        'units/apartments'.
+                        This encoding allows us to see the distribution of how many of each type of property has been
+                        sold in an area.
+                        <br>
+                        <br>
+                        In addition to this, annotations are shown above each bar, indicating the total number of
+                        property sales in a suburb.
+                        <br>
+                        <br>
+                        At any one point, data is only shown for one council area to avoid cognitive overload. This is
+                        due to the high number of suburbs in Metropolitan Melbourne.
+                        <br>
+                        <br>
+                        To view data for different council areas, use the 'Council Area Selection' tool.
+                    </p>
+                </div>
+
+            </div>
+            <div id="stacked-bar" class="plot row-item"></div>
+        </div>
+
     </div>
+    <div id="box" class=""></div>
+    <div id="heat-map" class=""></div>
+    <div id="scatterplot" class=""></div>
+    <div id="landsize-map" class=""></div>
+
 
 
     <script type="text/javascript">
