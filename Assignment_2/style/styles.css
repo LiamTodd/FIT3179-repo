@@ -7,9 +7,10 @@ div {
     /* height: 32.7in; */
     margin: 0 auto;
     background-color: #bfcdc3;
+    padding: 0.1in
 }
 
-.row-item{
+.row-item {
     background-color: #fbfbe5;
     height: 100%;
     flex: 1;
@@ -17,7 +18,7 @@ div {
 
 .vega-embed {
     background-color: #fbfbe5;
-    height: 100%;
+    padding-top: 0.2in
 }
 
 .chart-wrapper {
@@ -34,7 +35,6 @@ div {
 .vega-bind {
     background-color: #fbfbe5;
     align-items: left;
-
 }
 
 .text {
@@ -55,13 +55,16 @@ select {
     justify-content: space-between;
 }
 
-.row-top,
-.row-bottom,
-.row-mid {
-    height: 7in;
+.row-bottom {
+    height: 8in;
 }
 
-.row-bottom{
+.row-top,
+.row-mid {
+    height: 7.5in;
+}
+
+.row-bottom {
     padding-bottom: 0.2in;
 }
 

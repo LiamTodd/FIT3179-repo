@@ -27,8 +27,23 @@
         </div>
 
         <div class="row row-top">
-            <div id="heat-map" class="plot col-left row-item"></div>
-            <div id="scatterplot" class="plot col-right row-item"></div>
+            <div class="col-left row-item">
+                <div id="heat-map" class="plot"></div>
+                <div class="text desc">
+                    <p>
+                        This heat map allows us to explore the frequency of property sales in Metropolitan Melbourne
+                        with respect to the building area and land size. Use the slider to filter by maximum sale price.
+                    </p>
+                </div>
+            </div>
+            <div class="row-item col-right">
+                <div id="scatterplot" class="plot"></div>
+                <div class="text desc">
+                    <p>This scatterplot shows us the correlation between property sale price and its distance from the
+                        Melbourne CBD. Colour is used to show the land size for additional exploration. Use the
+                        drop-down to filter by council area.</p>
+                </div>
+            </div>
         </div>
 
         <div class="row row-mid">
@@ -40,9 +55,16 @@
                         variations
                         in the average property sale price. It illustrates spatial patterns and differences in property
                         values
-                        across the Metropolitan area. Each suburb is shaded according to its respective average sale
+                        across the Metropolitan area.
+                        <br><br>Each suburb is shaded according to its respective average sale
                         price,
                         with darker colors indicating higher prices and lighter shades representing lower ones.
+                        <br><br>A clear trend is the generally higher sale price, in suburbs closer to the Melbourne
+                        CBD.
+                        While this may not be surprising, it is worth contrasting this with the land-size choropleth
+                        (below), which shows that people generally pay more for smaller houses close to the city.
+                        <br><br> Furthermore, notice the hot-spots of exceptionally high house prices in the suburbs
+                        North-East of the CBD, and along the Eastern coastline.
                     </p>
                 </div>
             </div>
@@ -53,11 +75,21 @@
                     <p>
                         This choropleth map is displays Metropolitan Melbourne suburbs, using colour to represent
                         variations
-                        in the average property sale price. It illustrates spatial patterns and differences in property
-                        values
-                        across the Metropolitan area. Each suburb is shaded according to its respective average sale
-                        price,
-                        with darker colors indicating higher prices and lighter shades representing lower ones.
+                        in the average property land size. It illustrates spatial patterns and differences in property
+                        land sizes
+                        across the Metropolitan area. Each suburb is shaded according to its respective average land
+                        size,
+                        with darker colors indicating larger properties, while lighter colours represent smaller ones.
+                        <br><br>
+                        It is evident that in general, properties are larger, the further they are from the Melbourne
+                        CBD.
+                        This is due to the fact that land is cheaper at these further distances because of lower demand,
+                        and because some of these properties (especially very far from the CBD) are farm-land.
+                        <br><br>This choropleth should be contrasted with the sale price choropleth (above), as it shows
+                        that in general, Melbournians pay more for smaller properties, and conversely less for larger
+                        properties.
+                        <br><br>One takeaway of this trend may be that Melbournians are willing to sacrifice space and
+                        size for convenience and opportunity.
                     </p>
                 </div>
 
@@ -65,12 +97,31 @@
             <div id="landsize-map" class="plot row-item col-right"></div>
         </div>
         <div class="row row-bottom">
-            <div id="stacked-bar" class="plot col-left row-item"></div>
-            <div id="box" class="plot row-item col-right"></div>
+            <div class="col-left row-item">
+                <div id="stacked-bar" class="plot"></div>
+                <div class="text desc">
+                    <p>
+                        This stacked bar chart depicts the number property sales per suburb, broken down by property
+                        type. The types include houses, townhouses, and units/apartments. Use the drop-down to filter by
+                        council area.
+                    </p>
+                </div>
+            </div>
+            <div class="row-item col-right">
+                <div id="box" class="plot"></div>
+                <div class="text desc">
+                    <p>
+                        This box-plot shows how property sale price trends have varied over time. The top and bottom of
+                        the boxes show the highest and lowest sale prices in a month, respectively. Use
+                        the drop-down to filter by council area.
+                    </p>
+                </div>
+
+            </div>
         </div>
 
     </div>
- 
+
 
 
 
