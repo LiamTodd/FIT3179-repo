@@ -6,7 +6,8 @@
     "title": {
         "text": "Average Property Land Sizes",
         "font": "Georgia",
-        "fontSize": 35
+        "fontSize": 25,
+        "anchor": "start"
     },
     "data": {
         "url": "./visualisations/datasets/vic_localities.json",

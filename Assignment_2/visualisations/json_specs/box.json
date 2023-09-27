@@ -6,11 +6,13 @@
   "title": {
     "text": "Property Sale Price Ranges",
     "font": "Georgia",
-    "fontSize": 35
+    "fontSize": 25,
+    "anchor": "start",
+    "offset": 75
   },
   "background": "#fbfbe5",
-  "width": 530,
-  "height": 450,
+  "width": 380,
+  "height": 430,
   "params": [
     {
       "name": "councilAreaSelection",
@@ -107,7 +109,7 @@
   ],
   "mark": {
     "type": "bar",
-    "width": 20,
+    "width": 15,
     "color": "#225ea8"
   },
   "encoding": {

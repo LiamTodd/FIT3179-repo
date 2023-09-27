@@ -4,14 +4,15 @@
     "data": {
         "url": "./visualisations/datasets/melb_property_data.csv"
     },
-    "width": 450,
-    "height": 450,
+    "width": 330,
+    "height": 430,
     "mark": "circle",
     "background": "#fbfbe5",
     "title": {
         "text": "Sale Price, Distance, Land Size",
         "font": "Georgia",
-        "fontSize": 35
+        "fontSize": 25,
+        "anchor": "start"
     },
     "params": [
         {

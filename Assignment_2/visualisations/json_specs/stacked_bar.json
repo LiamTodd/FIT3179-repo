@@ -7,10 +7,11 @@
   "title": {
     "text": "Property Sales by Type",
     "font": "Georgia",
-    "fontSize": 35
+    "fontSize": 25,
+    "anchor": "start"
   },
-  "height": 450,
-  "width": 450,
+  "height": 430,
+  "width": 370,
   "background": "#fbfbe5",
   "params": [
     {
@@ -172,7 +173,7 @@
           ]
         },
         {
-          "calculate": "datum['Total Sales'] > 0 ? 'Total: ' + datum['Total Sales'] : ''",
+          "calculate": "datum['Total Sales'] > 50 ? 'Total: ' + datum['Total Sales'] : ''",
           "as": "annotationText"
         }
       ],

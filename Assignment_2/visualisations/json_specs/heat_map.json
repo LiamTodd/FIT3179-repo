@@ -6,10 +6,24 @@
     "title": {
         "text": "Land Size and Building Area",
         "font": "Georgia",
-        "fontSize": 35
+        "fontSize": 25,
+        "anchor": "start"
     },
     "background": "#fbfbe5",
     "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+    "params": [
+        {
+            "name": "priceFilter",
+            "value": 8.5,
+            "bind": {
+                "input": "range",
+                "min": 0.2,
+                "max": 5.5,
+                "step": 0.1,
+                "name": "Maximum Sale Price (million $): "
+            }
+        }
+    ],
     "transform": [
         {
             "filter": {
@@ -32,11 +46,14 @@
                     }
                 ]
             }
+        },
+        {
+            "filter": "datum['Price'] <= priceFilter * 1000000"
         }
     ],
     "mark": "rect",
-    "width": 450,
-    "height": 450,
+    "width": 330,
+    "height": 430,
     "encoding": {
         "tooltip": [
             {
