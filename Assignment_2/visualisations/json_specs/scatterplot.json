@@ -10,7 +10,7 @@
     "background": "#fbfbe5",
     "title": {
         "text": "Sale Price, Distance, Land Size",
-        "font": "Georgia",
+        "font": "Math",
         "fontSize": 25,
         "anchor": "start"
     },

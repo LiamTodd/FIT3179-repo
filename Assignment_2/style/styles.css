@@ -74,7 +74,7 @@ select {
 
 .desc {
     font-size: 1.1em;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Math;
 }
 
 .col-left {
@@ -87,7 +87,7 @@ select {
     width: fit-content;
     text-align: center;
     font-size: 1.4em;
-    font-family: Georgia, serif;
+    font-family: Math, serif;
 }
 
 .header-container {
@@ -107,5 +107,5 @@ select {
 
 .subheading {
     font-size: 1.1em;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Math;
 }

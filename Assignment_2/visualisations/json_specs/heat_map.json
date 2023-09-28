@@ -5,7 +5,7 @@
     },
     "title": {
         "text": "Land Size and Building Area",
-        "font": "Georgia",
+        "font": "Math",
         "fontSize": 25,
         "anchor": "start"
     },

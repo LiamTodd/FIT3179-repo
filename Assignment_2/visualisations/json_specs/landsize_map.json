@@ -5,7 +5,7 @@
     "background": "#fbfbe5",
     "title": {
         "text": "Average Property Land Sizes",
-        "font": "Georgia",
+        "font": "Math",
         "fontSize": 25,
         "anchor": "start"
     },
