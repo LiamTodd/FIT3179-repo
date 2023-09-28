@@ -16,6 +16,19 @@
             "feature": "vic_localities"
         }
     },
+    "params": [
+        {
+            "name": "priceFilter",
+            "value": 2.5,
+            "bind": {
+                "input": "range",
+                "min": 0.2,
+                "max": 2.5,
+                "step": 0.1,
+                "name": "Maximum Sale Price (million $): "
+            }
+        }
+    ],
     "transform": [
         {
             "lookup": "properties.LOC_NAME",
@@ -25,13 +38,14 @@
                 },
                 "key": "Suburb",
                 "fields": [
-                    "Average Landsize"
+                    "Average Landsize",
+                    "Average Price"
                 ]
             },
             "default": "0"
         },
         {
-            "calculate": "datum['Average Landsize'] === '0' ? 'No data' : datum['Average Landsize'] < 300 ? '0m\u00B2-300m\u00B2' : datum['Average Landsize'] < 500 ? '300m\u00B2-500m\u00B2' : datum['Average Landsize'] < 700 ? '500m\u00B2-700m\u00B2' : '700m\u00B2+'",
+            "calculate": "datum['Average Landsize'] === '0' ? 'No data' : datum['Average Price'] >= priceFilter * 1000000 ? 'No data' : datum['Average Landsize'] < 300 ? '0m\u00B2-300m\u00B2' : datum['Average Landsize'] < 500 ? '300m\u00B2-500m\u00B2' : datum['Average Landsize'] < 700 ? '500m\u00B2-700m\u00B2' : '700m\u00B2+'",
             "as": "Average Landsize Bin"
         },
         {
