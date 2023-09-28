@@ -68,6 +68,10 @@ select {
     padding-bottom: 0.2in;
 }
 
+.desc-box {
+    display: flex;
+}
+
 .desc {
     font-size: 1.1em;
     font-family: Helvetica, Arial, sans-serif;
