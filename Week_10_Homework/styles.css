@@ -71,7 +71,7 @@ select {
     flex-direction: column;
     width: fit-content;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1em;
     font-family: Georgia, serif;
 }
 
