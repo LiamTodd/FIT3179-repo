@@ -18,6 +18,17 @@
     },
     "params": [
         {
+            "name": "zoom_level",
+            "value": 63500,
+            "bind": {
+                "input": "range",
+                "min": 63500,
+                "max": 1000000,
+                "step": 100,
+                "name": "Zoom: "
+            }
+        },
+        {
             "name": "landsizeFilter",
             "value": 2000,
             "bind": {
@@ -54,7 +65,14 @@
         }
     ],
     "projection": {
-        "type": "mercator"
+        "type": "mercator",
+        "center": [
+            144.975,
+            -37.812
+        ],
+        "scale": {
+            "expr": "zoom_level"
+        }
     },
     "layer": [
         {
