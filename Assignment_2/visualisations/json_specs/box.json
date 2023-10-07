@@ -107,54 +107,104 @@
       "as": "YearMonth"
     }
   ],
-  "mark": {
-    "type": "bar",
-    "width": 15,
-    "color": "#225ea8"
-  },
-  "encoding": {
-    "x": {
-      "field": "YearMonth",
-      "type": "temporal",
-      "axis": {
-        "title": "Date",
-        "format": "%b %Y"
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "width": 15,
+        "color": "#225ea8"
       },
-      "sort": {
-        "field": "YearMonth"
+      "encoding": {
+        "x": {
+          "field": "YearMonth",
+          "type": "temporal",
+          "axis": {
+            "title": "Date",
+            "format": "%b %Y"
+          },
+          "sort": {
+            "field": "YearMonth"
+          }
+        },
+        "y": {
+          "aggregate": "min",
+          "field": "Price",
+          "title": "Price Range",
+          "axis": {
+            "title": "Price ($)"
+          }
+        },
+        "y2": {
+          "aggregate": "max",
+          "field": "Price"
+        },
+        "tooltip": [
+          {
+            "field": "Date",
+            "type": "temporal",
+            "title": "Date",
+            "format": "%b %Y"
+          },
+          {
+            "aggregate": "min",
+            "field": "Price",
+            "title": "Lowest Sale Price",
+            "format": "$,.0f"
+          },
+          {
+            "aggregate": "max",
+            "field": "Price",
+            "title": "Highest Sale Price",
+            "format": "$,.0f"
+          }
+        ]
       }
     },
-    "y": {
-      "aggregate": "min",
-      "field": "Price",
-      "title": "Price Range",
-      "axis": {
-        "title": "Price ($)"
+    {
+      "mark": {
+        "type": "line",
+        "color": "#41b6c4"
+      },
+      "encoding": {
+        "x": {
+          "field": "YearMonth",
+          "type": "temporal",
+          "axis": {
+            "title": "Date",
+            "format": "%b %Y"
+          },
+          "sort": {
+            "field": "YearMonth"
+          }
+        },
+        "y": {
+          "aggregate": "min",
+          "field": "Price"
+        }
       }
     },
-    "y2": {
-      "aggregate": "max",
-      "field": "Price"
-    },
-    "tooltip": [
-      {
-        "field": "Date",
-        "type": "temporal",
-        "title": "Date",
-        "format": "%b %Y"
+    {
+      "mark": {
+        "type": "line",
+        "color": "#1C3144"
       },
-      {
-        "aggregate": "min",
-        "field": "Price",
-        "title": "Lowest Sale Price",
-        "format": "$,.0f"
-      },
-      {
-        "aggregate": "max",
-        "field": "Price",
-        "title": "Highest Sale Price",
-        "format": "$,.0f"
+      "encoding": {
+        "x": {
+          "field": "YearMonth",
+          "type": "temporal",
+          "axis": {
+            "title": "Date",
+            "format": "%b %Y"
+          },
+          "sort": {
+            "field": "YearMonth"
+          }
+        },
+        "y": {
+          "aggregate": "max",
+          "field": "Price"
+        }
       }
-    ]
-  }
+    }
+  ]
 }
