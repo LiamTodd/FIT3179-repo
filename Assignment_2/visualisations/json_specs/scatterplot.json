@@ -16,78 +16,23 @@
     },
     "params": [
         {
-            "name": "councilAreaSelection",
+            "name": "typeSelection",
+            "value": null,
             "bind": {
                 "input": "select",
                 "options": [
                     null,
-                    "Banyule",
-                    "Bayside",
-                    "Boroondara",
-                    "Brimbank",
-                    "Cardinia",
-                    "Casey",
-                    "Darebin",
-                    "Frankston",
-                    "Glen Eira",
-                    "Greater Dandenong",
-                    "Hobsons Bay",
-                    "Hume",
-                    "Knox",
-                    "Macedon Ranges",
-                    "Manningham",
-                    "Maribyrnong",
-                    "Maroondah",
-                    "Melbourne",
-                    "Melton",
-                    "Monash",
-                    "Moonee Valley",
-                    "Moorabool",
-                    "Moreland",
-                    "Nillumbik",
-                    "Port Phillip",
-                    "Stonnington",
-                    "Whitehorse",
-                    "Whittlesea",
-                    "Wyndham",
-                    "Yarra",
-                    "Yarra Ranges"
+                    "h",
+                    "t",
+                    "u"
                 ],
                 "labels": [
                     "Show all",
-                    "Banyule",
-                    "Bayside",
-                    "Boroondara",
-                    "Brimbank",
-                    "Cardinia",
-                    "Casey",
-                    "Darebin",
-                    "Frankston",
-                    "Glen Eira",
-                    "Greater Dandenong",
-                    "Hobsons Bay",
-                    "Hume",
-                    "Knox",
-                    "Macedon Ranges",
-                    "Manningham",
-                    "Maribyrnong",
-                    "Maroondah",
-                    "Melbourne",
-                    "Melton",
-                    "Monash",
-                    "Moonee Valley",
-                    "Moorabool",
-                    "Moreland",
-                    "Nillumbik",
-                    "Port Phillip",
-                    "Stonnington",
-                    "Whitehorse",
-                    "Whittlesea",
-                    "Wyndham",
-                    "Yarra",
-                    "Yarra Ranges"
+                    "House",
+                    "Townhouse",
+                    "Unit/Apartment"
                 ],
-                "name": "Council Area Selection: "
+                "name": "Property Type Selection: "
             }
         }
     ],
@@ -109,7 +54,7 @@
             "as": "Distance Formatted"
         },
         {
-            "filter": "councilAreaSelection == null || datum['CouncilArea'] === councilAreaSelection"
+            "filter": "typeSelection == null || datum['Type'] === typeSelection"
         }
     ],
     "encoding": {

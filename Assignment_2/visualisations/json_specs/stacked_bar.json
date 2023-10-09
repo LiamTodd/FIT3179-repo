@@ -185,8 +185,7 @@
         },
         "y": {
           "field": "Total Sales",
-          "type": "quantitative",
-          "title": ""
+          "type": "quantitative"
         },
         "text": {
           "field": "annotationText",

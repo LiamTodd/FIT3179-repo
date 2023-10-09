@@ -159,52 +159,6 @@
           }
         ]
       }
-    },
-    {
-      "mark": {
-        "type": "line",
-        "color": "#41b6c4"
-      },
-      "encoding": {
-        "x": {
-          "field": "YearMonth",
-          "type": "temporal",
-          "axis": {
-            "title": "Date",
-            "format": "%b %Y"
-          },
-          "sort": {
-            "field": "YearMonth"
-          }
-        },
-        "y": {
-          "aggregate": "min",
-          "field": "Price"
-        }
-      }
-    },
-    {
-      "mark": {
-        "type": "line",
-        "color": "#1C3144"
-      },
-      "encoding": {
-        "x": {
-          "field": "YearMonth",
-          "type": "temporal",
-          "axis": {
-            "title": "Date",
-            "format": "%b %Y"
-          },
-          "sort": {
-            "field": "YearMonth"
-          }
-        },
-        "y": {
-          "aggregate": "max",
-          "field": "Price"
-        }
-      }
     }
   ]
 }
